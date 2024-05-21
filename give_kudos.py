@@ -14,7 +14,7 @@ class KudosGiver:
         self.EMAIL = os.environ.get('STRAVA_EMAIL')
         self.PASSWORD = os.environ.get('STRAVA_PASSWORD')
 
-if self.EMAIL is None or self.PASSWORD is None:
+        if self.EMAIL is None or self.PASSWORD is None:
             raise Exception(f"Must set environ variables EMAIL AND PASSWORD. \
                 e.g. run export STRAVA_EMAIL=YOUR_EMAIL")
 
