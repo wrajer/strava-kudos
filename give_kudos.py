@@ -8,7 +8,7 @@ BASE_URL = "https://www.strava.com/"
 class KudosGiver:
     """
     Logins into Strava and gives kudos to all activities under
-    Following.
+    Following. test1
     """
     def __init__(self, max_run_duration=540) -> None:
         self.EMAIL = os.environ.get('STRAVA_EMAIL')
