@@ -26,7 +26,6 @@ class KudosGiver:
         p = sync_playwright().start()
         self.browser = p.firefox.launch() # does not work in chrome
         self.page = self.browser.new_page()
-;
 
     def email_login(self):
         """
