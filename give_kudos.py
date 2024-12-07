@@ -73,7 +73,8 @@ class KudosGiver:
             self.own_profile_id = self.page.locator(".user-menu > a").get_attribute('href').split("/athletes/")[1]
             print("id", self.own_profile_id)
         except Exception as _:
-            print("can't find own profile ID")
+            print("can't find own profile ID so set it manually to ", "62209464")
+            self.own_profile_id = "62209464"
 
     def locate_kudos_buttons_and_maybe_give_kudos(self, web_feed_entry_locator) -> int:
         """
