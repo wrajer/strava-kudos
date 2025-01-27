@@ -23,9 +23,12 @@ class KudosGiver:
         self.num_entries = 100
         self.web_feed_entry_pattern = '[data-testid=web-feed-entry]'
 
+        
         p = sync_playwright().start()
         self.browser = p.firefox.launch() # does not work in chrome
-        self.page = self.browser.new_page()
+        self.context = self.browser.new_context(user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')
+        self.page = self.context.new_page()
+        # self.page = self.browser.new_page()
 
 
     def email_login(self):
