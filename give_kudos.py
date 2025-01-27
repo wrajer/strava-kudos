@@ -41,10 +41,20 @@ class KudosGiver:
         except Exception as _:
             pass
         self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
+        
+        self.page.click('[data-cy="login-button"]')
+        print("---Clicked login!!---")
         self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
-        self.page.get_by_role("button", name="Log In").click()
+        print("---Passowrd filled!!---")
+        # self.page.get_by_role("button", id="desktop-login-button").click()
+        self.page.click('button:has-text("Log in")')
         print("---Logged in!!---")
         self._run_with_retries(func=self._get_page_and_own_profile)
+        # self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
+        # self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
+        # self.page.get_by_role("button", name="Log In").click()
+        # print("---Logged in!!---")
+        # self._run_with_retries(func=self._get_page_and_own_profile)
         
     def _run_with_retries(self, func, retries=3):
         """
