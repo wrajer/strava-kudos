@@ -42,7 +42,7 @@ class KudosGiver:
             pass
         self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
         
-        self.page.click('[data-cy="login-button"]')
+        self.page.click('button:has-text("Log In")')
         print("---Clicked login!!---")
         self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
         print("---Passowrd filled!!---")
