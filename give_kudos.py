@@ -46,7 +46,7 @@ class KudosGiver:
         print("---Clicked login!!---")
         self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
         print("---Passowrd filled!!---")
-        self.page.get_by_role("button", id="mobile-login-button".click()
+        self.page.get_by_role("button", id="mobile-login-button").click()
         # self.page.click('button:has-text("Log in")')
         print("---Logged in!!---")
         self._run_with_retries(func=self._get_page_and_own_profile)
