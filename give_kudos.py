@@ -40,9 +40,11 @@ class KudosGiver:
             self.page.get_by_role("button", name="Reject").click(timeout=5000)
         except Exception as _:
             pass
+        print("---Flag 0!!---")
         self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
-        
-        self.page.click('button:has-text("Log In")')
+        print("---Flag 1!!---")
+        self.page.get_by_role("button", name="Log In").click()
+        # self.page.click('button:has-text("Log In")')
         print("---Clicked login!!---")
         self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
         print("---Passowrd filled!!---")
